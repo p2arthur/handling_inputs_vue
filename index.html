@@ -46,18 +46,27 @@
           <input
             type="text"
             id="fname"
-            name="fname" /><br />
+            name="fname"
+            v-model="newMember.fname" /><br />
 
           <label for="lname">Last name:</label><br />
           <input
             type="text"
             id="lname"
-            name="lname" /><br />
+            name="lname"
+            v-model="newMember.lname" /><br />
+          <label for="age">Age:</label><br />
+          <input
+            id="age"
+            type="number"
+            v-model="newMember.age"
+            max="100" />
 
           <label for="instrument">Instrument:</label><br />
           <select
             name="instrument"
-            id="instrument">
+            id="instrument"
+            v-model="newMember.instrument">
             <option value="Bass">Bass</option>
             <option value="Electric Guitar">Electric Guitar</option>
             <option value="Acoustic Guitar">Acoustic Guitar</option>
@@ -66,7 +75,8 @@
           <br /><br />
           <input
             type="button"
-            value="Add" />
+            value="Add"
+            @click="addMember()" />
         </form>
       </section>
     </main>
